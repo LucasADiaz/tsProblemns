@@ -157,6 +157,35 @@
         return words.reduce(whatsLonger);
     }
     console.log(longestWord("hola mundosssssss como estaadasdasdasdadsdaan todo bien"));
+    // fin de mejor metodo
+    // extraer todas las cadenas de un string
+    var cadena = "holamundocomo estan todo bien";
+    var cadena2 = "abcdefghijklmñopqabcdefj";
+    function extract(str) {
+        var result = [];
+        for (var i = 0; i < str.length; i++) {
+            console.log(i);
+            var resolve = allStringsOfWave(str, i);
+            result = result.concat(resolve);
+        }
+        return result;
+    }
+    function allStringsOfWave(str, n) {
+        var result = [];
+        for (var i = 0; i < str.length; i++) {
+            var subString = str.substring(i, i + n);
+            result.push(subString);
+        }
+        return result;
+    }
+    function main(str) {
+        str = str.replace(/\s/g, "");
+        var array = extract(str);
+        var cleaner = cleanArray(array);
+        var longerWord = longWordOfArray(cleaner);
+        return longerWord;
+    }
+    console.log(main(cadena2));
 })();
 //ejercicio resuelto de diccionario
 //  const diccionario: string[] = ["a", "aa", "aaa"];

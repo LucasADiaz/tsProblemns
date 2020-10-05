@@ -200,6 +200,40 @@
     );
 
     // fin de mejor metodo
+
+    // extraer todas las cadenas de un string
+
+    const cadena = "holamundocomo estan todo bien";
+    const cadena2 = "abcdefghijklmñopqabcdefj";
+
+    function extract(str: string) {
+        let result: string[] = [];
+        for (let i = 0; i < str.length; i++) {
+            console.log(i);
+            const resolve = allStringsOfWave(str, i);
+            result = result.concat(resolve);
+        }
+        return result;
+    }
+
+    function allStringsOfWave(str: string, n: number) {
+        const result = [];
+        for (let i = 0; i < str.length; i++) {
+            const subString = str.substring(i, i + n);
+            result.push(subString);
+        }
+        return result;
+    }
+
+    function main(str: string) {
+        str = str.replace(/\s/g, "");
+        const array = extract(str);
+        const cleaner = cleanArray(array);
+        const longerWord = longWordOfArray(cleaner);
+        return longerWord;
+    }
+
+    console.log(main(cadena2));
 })();
 
 //ejercicio resuelto de diccionario
