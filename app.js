@@ -94,6 +94,7 @@
         return myLongestWord;
     }
     console.log("segundo metodo longWord", longWordsecond("hola mundo nosotros somos unos katanga scuad"));
+    // PROBLEMA DISEÑAR UN ALGORITMO QUE RECORRA UN ARRAY de palabras, el cual debe primero limpiar de toda palabra que tenga elementos repetidos, y luego devolver la cadena mas larga
     function characterRepeat(str) {
         str = str.replace(/\s/g, "");
         var splited = str.split("");
@@ -147,4 +148,39 @@
     }
     var strings = ["a", "ab", "avcsde", "aaa", "asda", "carroza"];
     console.log(index(strings));
+    // OTRA FORMA DE DEVOLVER LA CADENA MAS LARGA PERTENECIENTE AL ARRAY
+    function whatsLonger(str1, str2) {
+        return str2.length > str1.length ? str2 : str1;
+    }
+    function longestWord(str) {
+        var words = str.split(" ");
+        return words.reduce(whatsLonger);
+    }
+    console.log(longestWord("hola mundosssssss como estaadasdasdasdadsdaan todo bien"));
 })();
+//ejercicio resuelto de diccionario
+//  const diccionario: string[] = ["a", "aa", "aaa"];
+//     let palabra = "aaabaa";
+//     const subString = (dic: string[], pal: string) => {
+//         const array = [];
+//         dic.forEach((item) => {
+//             let word = pal;
+//             while (word.length > 0) {
+//                 const res = word.indexOf(item);
+//                 if (res !== -1) {
+//                     if (res === 0) {
+//                         word = word.substr(res + 1);
+//                         array.push(item);
+//                     } else {
+//                         word = word.substr(res);
+//                     }
+//                 } else {
+//                     word = "";
+//                 }
+//             }
+//         });
+//         return array;
+//     };
+//     const result: string[] = subString(diccionario, palabra);
+//     console.log(result);
+// OTRA FORMA DE DEVOLVER LA CADENA MAS LARGA PERTENECIENTE AL ARRAY

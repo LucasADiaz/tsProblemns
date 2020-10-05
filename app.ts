@@ -183,6 +183,23 @@
     const strings = ["a", "ab", "avcsde", "aaa", "asda", "carroza"];
 
     console.log(index(strings));
+
+    // OTRA FORMA DE DEVOLVER LA CADENA MAS LARGA PERTENECIENTE AL ARRAY
+
+    function whatsLonger(str1: string, str2: string) {
+        return str2.length > str1.length ? str2 : str1;
+    }
+
+    function longestWord(str: string) {
+        let words = str.split(" ");
+        return words.reduce(whatsLonger);
+    }
+
+    console.log(
+        longestWord("hola mundosssssss como estaadasdasdasdadsdaan todo bien"),
+    );
+
+    // fin de mejor metodo
 })();
 
 //ejercicio resuelto de diccionario
@@ -213,3 +230,5 @@
 
 //     const result: string[] = subString(diccionario, palabra);
 //     console.log(result);
+
+// OTRA FORMA DE DEVOLVER LA CADENA MAS LARGA PERTENECIENTE AL ARRAY
